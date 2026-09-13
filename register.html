@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Become a Donor - BloodConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">🩸 BloodConnect</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/search">Find Blood</a>
+        <a href="/blood-banks">Blood Banks</a>
+        <a class="emergency-nav" href="/emergency">🚨 Emergency</a>
+    </div>
+
+</nav>
+
+
+<section class="form-page">
+
+    <div class="form-card">
+
+        <div class="form-header">
+
+            <div class="big-icon">🩸</div>
+
+            <h1>Become a Blood Donor</h1>
+
+            <p>
+                Your registration can help save someone's life.
+            </p>
+
+        </div>
+
+
+        <form method="POST">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label>Blood Group</label>
+
+            <select name="blood" required>
+
+                <option value="">Select Blood Group</option>
+
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+
+                <option value="HH">HH - Bombay</option>
+
+            </select>
+
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label>City / Area</label>
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Example: Salur"
+                required
+            >
+
+
+            <button type="submit" class="full-btn">
+                🩸 Register as Available Donor
+            </button>
+
+        </form>
+
+
+        <div class="info-box">
+
+            💡 <b>How it works?</b>
+
+            <p>
+                When an emergency request matches your blood group,
+                you will receive an emergency notification inside
+                the BloodConnect system.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

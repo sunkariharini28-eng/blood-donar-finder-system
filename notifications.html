@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Donor Notifications</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">🩸 BloodConnect</div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+        <a href="/search">Find Blood</a>
+        <a href="/blood-banks">Blood Banks</a>
+
+    </div>
+
+</nav>
+
+
+<section class="notification-page">
+
+    <div class="notification-header">
+
+        <div class="notification-icon">
+            🔔
+        </div>
+
+        <div>
+
+            <h1>Emergency Notifications</h1>
+
+            {% if donor %}
+
+            <p>
+                Welcome {{ donor['name'] }} |
+                Blood Group: <b>{{ donor['blood_group'] }}</b>
+            </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    {% if notifications %}
+
+    <div class="notification-list">
+
+        {% for n in notifications %}
+
+        <div class="notification-card
+        {% if n['response'] == 'Accepted' %}
+        accepted
+        {% elif n['response'] == 'Rejected' %}
+        rejected
+        {% endif %}">
+
+            <div class="notification-top">
+
+                <span class="emergency-label">
+                    🚨 {{ n['urgency'] }}
+                </span>
+
+                <span>
+                    {{ n['created_at'] }}
+                </span>
+
+            </div>
+
+
+            <h2>
+                {{ n['blood'] }} Blood Required
+            </h2>
+
+
+            <p>
+                👤 Patient:
+                <b>{{ n['patient'] }}</b>
+            </p>
+
+            <p>
+                🩸 Required Units:
+                <b>{{ n['units'] }}</b>
+            </p>
+
+            <p>
+                📍 Location:
+                <b>{{ n['location'] }}</b>
+            </p>
+
+            <p>
+                📞 Contact:
+                <b>{{ n['phone'] }}</b>
+            </p>
+
+
+            {% if n['response'] == 'Pending' %}
+
+            <div class="notification-actions">
+
+                <a
+                    href="/notification/{{ n['id'] }}/Accepted"
+                    class="accept-btn"
+                >
+                    ✅ Accept
+                </a>
+
+                <a
+                    href="/notification/{{ n['id'] }}/Rejected"
+                    class="reject-btn"
+                >
+                    ❌ Reject
+                </a>
+
+            </div>
+
+            {% elif n['response'] == 'Accepted' %}
+
+            <div class="response-success">
+                ✅ You accepted this emergency request.
+            </div>
+
+            {% else %}
+
+            <div class="response-rejected">
+                ❌ You rejected this request.
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="empty-box">
+
+        <div>🔔</div>
+
+        <h2>No Emergency Notifications</h2>
+
+        <p>
+            New matching emergency requests will appear here.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</section>
+
+</body>
+</html>
