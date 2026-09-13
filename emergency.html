@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Emergency Blood Request</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">🩸 BloodConnect</div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+        <a href="/register">Become a Donor</a>
+        <a href="/search">Find Blood</a>
+        <a href="/blood-banks">Blood Banks</a>
+
+    </div>
+
+</nav>
+
+
+<section class="emergency-page">
+
+    <div class="emergency-header">
+
+        <div class="emergency-symbol">
+            🚨
+        </div>
+
+        <h1>Emergency Blood Request</h1>
+
+        <p>
+            Need blood urgently? Create a request and matching
+            available donors will be notified.
+        </p>
+
+    </div>
+
+
+    <div class="emergency-form">
+
+        <form method="POST">
+
+            <label>Patient Name</label>
+
+            <input
+                type="text"
+                name="patient"
+                placeholder="Enter patient name"
+                required
+            >
+
+
+            <label>Required Blood Group</label>
+
+            <select name="blood" required>
+
+                <option value="">Select Blood Group</option>
+
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+
+                <option value="HH">HH - Bombay</option>
+
+            </select>
+
+
+            <label>Required Units</label>
+
+            <input
+                type="number"
+                name="units"
+                min="1"
+                value="1"
+                required
+            >
+
+
+            <label>Hospital / Area</label>
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Example: Salur Government Hospital"
+                required
+            >
+
+
+            <label>Contact Number</label>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Emergency contact number"
+                required
+            >
+
+
+            <label>Emergency Level</label>
+
+            <select name="urgency">
+
+                <option value="Critical">
+                    🔴 Critical - Immediate
+                </option>
+
+                <option value="Urgent">
+                    🟠 Urgent
+                </option>
+
+                <option value="Normal">
+                    🟡 Required Soon
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="emergency-btn">
+
+                🚨 SEND EMERGENCY REQUEST
+
+            </button>
+
+        </form>
+
+
+        <div class="emergency-note">
+
+            <h3>🔔 Automatic Donor Alert</h3>
+
+            <p>
+                After submitting this request, the system searches
+                available donors with the required blood group.
+                Matching donors receive an emergency notification
+                inside the application.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

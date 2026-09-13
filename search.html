@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Find Blood - BloodConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">🩸 BloodConnect</div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+        <a href="/register">Become a Donor</a>
+        <a href="/blood-banks">Blood Banks</a>
+        <a class="emergency-nav" href="/emergency">🚨 Emergency</a>
+
+    </div>
+
+</nav>
+
+
+<section class="search-page">
+
+    <div class="search-header">
+
+        <span>🔎</span>
+
+        <h1>Find a Blood Donor</h1>
+
+        <p>
+            Search available donors by blood group and area.
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <form method="POST">
+
+            <div class="input-group">
+
+                <label>Blood Group</label>
+
+                <select name="blood" required>
+
+                    <option value="">Select Blood Group</option>
+
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+
+                    <option value="HH">HH - Bombay</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>City / Area</label>
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Example: Salur"
+                >
+
+            </div>
+
+
+            <button type="submit" class="full-btn">
+                🔎 Search Available Donors
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if rare %}
+
+    <div class="rare-alert">
+
+        {{ rare }}
+
+    </div>
+
+    {% endif %}
+
+
+    {% if donors %}
+
+    <div class="results-title">
+
+        <h2>Available Donors</h2>
+
+        <p>
+            {{ donors|length }} matching donor(s) found
+        </p>
+
+    </div>
+
+
+    <div class="donor-grid">
+
+        {% for donor in donors %}
+
+        <div class="donor-card">
+
+            <div class="donor-top">
+
+                <div class="donor-avatar">
+                    {{ donor['name'][0]|upper }}
+                </div>
+
+                <div>
+
+                    <h3>{{ donor['name'] }}</h3>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+                <div class="blood-badge">
+                    {{ donor['blood_group'] }}
+                </div>
+
+            </div>
+
+
+            <div class="donor-details">
+
+                <p>
+                    📍 {{ donor['location'] }}
+                </p>
+
+                <p>
+                    📞 {{ donor['phone'] }}
+                </p>
+
+            </div>
+
+
+            <a
+                href="tel:{{ donor['phone'] }}"
+                class="contact-btn"
+            >
+                📞 Contact Donor
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <div class="empty-box">
+
+        <div>🩸</div>
+
+        <h2>No Matching Donors Found</h2>
+
+        <p>
+            Try another area or create an emergency blood request.
+        </p>
+
+        <a href="/emergency" class="btn primary">
+            🚨 Create Emergency Request
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</section>
+
+</body>
+</html>

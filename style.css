@@ -1,0 +1,779 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7f7;
+    color: #222;
+}
+
+nav {
+    height: 75px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #d71920;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #d71920;
+}
+
+.emergency-nav {
+    background: #d71920 !important;
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 25px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 520px;
+    padding: 80px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:
+        linear-gradient(135deg, #fff0f0, #ffffff);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #ffe1e1;
+    color: #c5141b;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 65px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #d71920;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.primary {
+    background: #d71920;
+    color: white;
+}
+
+.secondary {
+    border: 2px solid #d71920;
+    color: #d71920;
+    background: white;
+}
+
+.blood-animation {
+    font-size: 180px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    padding: 50px 9%;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+    font-size: 40px;
+}
+
+.stat-card h2 {
+    font-size: 35px;
+    color: #d71920;
+    margin: 10px;
+}
+
+
+/* FEATURES */
+
+.features {
+    padding: 70px 9%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title p {
+    color: #d71920;
+    font-weight: bold;
+}
+
+.section-title h2,
+.section-title h1 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card > div {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-card a {
+    color: #d71920;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* RARE */
+
+.rare-section {
+    margin: 30px 9% 70px;
+    padding: 40px;
+    border-radius: 25px;
+    background: #8f1118;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rare-section p {
+    max-width: 700px;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.rare-badge {
+    background: white;
+    color: #8f1118;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rare-icon {
+    font-size: 90px;
+}
+
+
+/* FORM */
+
+.form-page,
+.search-page,
+.emergency-page,
+.notification-page,
+.bank-page,
+.list-page {
+    padding: 60px 8%;
+}
+
+.form-card,
+.search-box,
+.emergency-form {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.1);
+}
+
+.form-header,
+.search-header,
+.emergency-header,
+.bank-header,
+.notification-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-header h1,
+.search-header h1,
+.emergency-header h1,
+.bank-header h1 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.big-icon,
+.search-header span,
+.emergency-symbol,
+.bank-icon {
+    font-size: 60px;
+}
+
+.form-card label,
+.emergency-form label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #d71920;
+}
+
+.full-btn {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    margin-top: 25px;
+    border-radius: 12px;
+    background: #d71920;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info-box,
+.emergency-note {
+    margin-top: 25px;
+    background: #fff1f1;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+
+/* SEARCH */
+
+.search-header p,
+.bank-header p,
+.emergency-header p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.results-title {
+    margin: 40px 0 20px;
+}
+
+.donor-grid,
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.donor-card,
+.bank-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.donor-top,
+.bank-card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.donor-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffe0e0;
+    color: #d71920;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.blood-badge {
+    margin-left: auto;
+    background: #d71920;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.available {
+    color: #159447;
+    font-size: 13px;
+}
+
+.donor-details,
+.bank-info {
+    margin: 25px 0;
+    line-height: 2;
+    color: #555;
+}
+
+.contact-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 13px;
+    background: #d71920;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.rare-alert {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff0d8;
+    color: #8b5200;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+/* EMERGENCY */
+
+.emergency-page {
+    background: #fff5f5;
+    min-height: calc(100vh - 75px);
+}
+
+.emergency-header {
+    color: #9f1016;
+}
+
+.emergency-btn {
+    width: 100%;
+    padding: 18px;
+    margin-top: 25px;
+    background: #b70f16;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.emergency-btn:hover {
+    background: #8e0b10;
+}
+
+
+/* NOTIFICATIONS */
+
+.notification-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-icon {
+    font-size: 55px;
+}
+
+.notification-list {
+    max-width: 900px;
+    margin: auto;
+}
+
+.notification-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    border-left: 6px solid #d71920;
+}
+
+.notification-card.accepted {
+    border-left-color: #159447;
+}
+
+.notification-card.rejected {
+    border-left-color: #777;
+}
+
+.notification-top {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+    font-size: 13px;
+}
+
+.emergency-label {
+    color: #d71920;
+    font-weight: bold;
+}
+
+.notification-card h2 {
+    margin: 18px 0;
+}
+
+.notification-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.notification-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.accept-btn,
+.reject-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.accept-btn {
+    background: #159447;
+    color: white;
+}
+
+.reject-btn {
+    background: #eee;
+    color: #555;
+}
+
+.response-success {
+    margin-top: 20px;
+    background: #e6f8ed;
+    color: #13753a;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.response-rejected {
+    margin-top: 20px;
+    background: #eee;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+
+/* BLOOD BANK */
+
+.bank-search {
+    max-width: 900px;
+    margin: auto auto 40px;
+}
+
+.bank-search form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+}
+
+.bank-search button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #d71920;
+    color: white;
+    font-weight: bold;
+}
+
+.bank-logo {
+    font-size: 45px;
+}
+
+.emergency-open {
+    color: #159447;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.available-blood {
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.blood-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.blood-tags span {
+    background: white;
+    color: #d71920;
+    border: 1px solid #ddd;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* EMPTY */
+
+.empty-box {
+    max-width: 650px;
+    margin: 50px auto;
+    background: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+.empty-box div {
+    font-size: 70px;
+}
+
+.empty-box h2 {
+    margin: 15px 0;
+}
+
+.empty-box p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* FLASH */
+
+.messages {
+    padding: 20px 8%;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background: #e7f8ed;
+    color: #14733a;
+}
+
+.message.error {
+    background: #ffe3e3;
+    color: #9c1111;
+}
+
+
+/* REQUEST */
+
+.request-card {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.request-card h2 {
+    margin: 12px 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+footer p {
+    margin: 12px;
+    color: #bbb;
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+        flex-direction: column;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .blood-animation {
+        font-size: 100px;
+        margin-top: 30px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .stats,
+    .feature-grid,
+    .donor-grid,
+    .bank-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rare-section {
+        margin: 20px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .form-page,
+    .search-page,
+    .emergency-page,
+    .notification-page,
+    .bank-page,
+    .list-page {
+        padding: 40px 5%;
+    }
+
+    .form-card,
+    .search-box,
+    .emergency-form {
+        padding: 25px;
+    }
+
+    .bank-search form {
+        grid-template-columns: 1fr;
+    }
+
+    .request-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+}
